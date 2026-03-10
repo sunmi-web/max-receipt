@@ -4,7 +4,7 @@
 
 ## 功能
 
-- 提供完整的结账单模板（template）+ 订单数据（data）示例
+- 提供完整的模板（template）+ 模版数据（data）示例
 - 通过 `@sunmi/max-print` 的 `print()` 将模板与数据渲染为小票文本并输出
 - 支持将打印数据通过 ADB 推送到设备上的 Receipt Tester 应用进行真机预览
 
