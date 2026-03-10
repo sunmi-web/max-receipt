@@ -60,7 +60,7 @@ max-receipt/
 
 ## Schema
 
-```json
+```jsonc
 {
     "id": "string", //小票模板ID
     "createTime": "number", //创建时间戳
