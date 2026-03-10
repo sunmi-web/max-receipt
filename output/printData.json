@@ -34,7 +34,7 @@
   {
     "type": "text",
     "params": {
-      "value": "订单来源: POS订单",
+      "value": "订单来源: POS Order",
       "size": 20,
       "align": 0,
       "bold": false
@@ -49,12 +49,76 @@
     }
   },
   {
-    "type": "text",
+    "type": "columns",
     "params": {
-      "value": "冰美式-大杯",
-      "size": 24,
-      "bold": true,
-      "align": 0
+      "items": [
+        {
+          "type": "rows",
+          "weight": 3,
+          "items": [
+            {
+              "type": "columns",
+              "params": {
+                "items": [
+                  {
+                    "type": "text",
+                    "value": "冰美式-大杯",
+                    "size": 24,
+                    "bold": true,
+                    "align": 0,
+                    "weight": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "columns",
+              "params": {
+                "items": [
+                  {
+                    "type": "text",
+                    "value": "7 分甜",
+                    "size": 20,
+                    "bold": false,
+                    "align": 0,
+                    "weight": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "columns",
+              "params": {
+                "items": [
+                  {
+                    "type": "text",
+                    "value": "珍珠 x1",
+                    "size": 20,
+                    "bold": false,
+                    "align": 0,
+                    "weight": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "columns",
+              "params": {
+                "items": [
+                  {
+                    "type": "text",
+                    "value": "备注: 我是备注",
+                    "size": 20,
+                    "bold": false,
+                    "align": 0,
+                    "weight": 1
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   {

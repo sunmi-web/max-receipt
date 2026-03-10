@@ -1,17 +1,13 @@
 {
+  "id": "8072442572914698",
+  "createTime": 1769760534938,
+  "updateTime": 1769760534938,
   "name": {
-    "zh-CN": "标签制作单",
-    "en-US": "Label Production Order"
+    "en": "Order Produksi Label",
+    "zh": "标签制作单"
   },
-  "schemaVersion": 1,
   "version": "1.0.0",
-  "supported": [
-    [
-      60,
-      40
-    ]
-  ],
-  "defaultLang": "zh-CN",
+  "schemaVersion": "1.0.0",
   "list": [
     {
       "type": "columnInColumn",
@@ -20,6 +16,7 @@
           {
             "type": "text",
             "typeId": "pickupNum",
+            "name": "{{pickupNum|l}}",
             "param": {
               "size": "m",
               "text": "{{pickupNum}}",
@@ -27,19 +24,21 @@
               "bold": 1,
               "weight": 1
             },
+            "edit": false,
             "id": "uSCv1"
           },
           {
+            "id": "jBdcO",
             "type": "text",
             "typeId": "serviceType",
+            "name": "{{serviceTypeTitle|l}}",
             "param": {
               "size": "m",
               "text": "{{serviceType}} {{num}}/{{total}}",
               "bold": 0,
               "align": 2,
               "weight": 1
-            },
-            "id": "jBdcO"
+            }
           }
         ]
       },
@@ -54,18 +53,20 @@
         "bold": 0,
         "align": 0
       },
+      "edit": false,
       "id": "6IGxu"
     },
     {
       "type": "text",
-      "typeId": "orderFrom",
       "param": {
         "size": "s",
         "text": "{{orderFromTitle|l}}: {{orderFrom}}",
         "align": 0,
         "bold": 0
       },
-      "id": "8OvYC"
+      "edit": false,
+      "id": "8OvYC",
+      "typeId": "orderFrom"
     },
     {
       "type": "divider",
@@ -73,34 +74,113 @@
         "style": 2,
         "height": 3
       },
-      "id": "div1",
+      "id": "QRlkNCQEoVTF",
       "upline": 1,
       "bottomBlank": 1
     },
     {
-      "type": "text",
-      "typeId": "productName",
+      "type": "columnInColumn",
       "param": {
-        "size": "m",
-        "text": "{{productName}}",
-        "bold": 1,
-        "align": 0
+        "columns": [
+          {
+            "type": "row",
+            "param": {
+              "rows": [
+                {
+                  "type": "text",
+                  "typeId": "productName",
+                  "name": "{{productName|l}}",
+                  "param": {
+                    "size": "m",
+                    "text": "{{productName}}",
+                    "bold": 1,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "WfGUT"
+                },
+                {
+                  "type": "text",
+                  "typeId": "method",
+                  "name": "{{method|l}}",
+                  "hideFields": [
+                    "method"
+                  ],
+                  "param": {
+                    "size": "s",
+                    "text": "{{method}}",
+                    "bold": 0,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "vpTux"
+                },
+                {
+                  "type": "text",
+                  "typeId": "ingredient",
+                  "name": "{{ingredient|l}}",
+                  "hideFields": [
+                    "ingredient"
+                  ],
+                  "param": {
+                    "size": "s",
+                    "text": "{{ingredient}}",
+                    "bold": 0,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "vpTul"
+                },
+                {
+                  "type": "text",
+                  "typeId": "remark",
+                  "name": "{{remark|l}}",
+                  "hideFields": [
+                    "remarkContent"
+                  ],
+                  "param": {
+                    "size": "s",
+                    "text": "{{remark|l}}: {{remarkContent}}",
+                    "bold": 0,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "skHuQ"
+                }
+              ],
+              "weight": 3,
+              "align": 0
+            },
+            "id": "kvOjv"
+          },
+          {
+            "type": "image",
+            "typeId": "logo",
+            "name": "{{customImg|l}}",
+            "param": {
+              "data": "",
+              "align": 2,
+              "weight": 1
+            },
+            "id": "Sv3Mq"
+          }
+        ]
       },
-      "id": "prod1"
+      "id": "eMsso"
     },
     {
       "type": "text",
-      "typeId": "printTime",
       "param": {
         "size": "s",
         "text": "{{time}}",
         "align": 0,
         "bold": 0
       },
-      "id": "qiBwe"
+      "edit": false,
+      "id": "qiBwe",
+      "typeId": "printTime"
     }
   ],
-  "template": {},
   "groups": [
     {
       "id": "base",
@@ -123,26 +203,433 @@
     "total": "5",
     "orderFrom": "{{platformPOS|l}}",
     "productName": "{{exampleProductName|l}}",
+    "method": "{{exampleMethod|l}}",
+    "ingredient": "{{exampleIngredient|l}}",
+    "remarkContent": "{{exampleRemark|l}}",
     "time": "2025/07/28 17:00:00"
   },
-  "types": [],
-  "extra": {
-    "addition": []
-  },
+  "columns": {},
+  "defaultLang": "en-US",
   "lang": {
+    "id": {
+      "customImg": "Gambar Kustom",
+      "footerGroup": "Catatan Kaki",
+      "productInfo": "Info pesanan",
+      "customText": "Teks Kustom",
+      "tempProduct": "Barang sementara",
+      "base": "Info dasar",
+      "pickupNum": "Nomor pemesanan",
+      "serialNumTitle": "Nomor seri / nomor hidangan",
+      "serviceTypeTitle": "Cara makan",
+      "serviceTypeDINEIN": "Makan di tempat",
+      "serviceTypeTAKEOUT": "Dibungkus",
+      "serviceTypeDELIVERY": "Antar",
+      "serviceTypePICKUP": "Ambil sendiri",
+      "orderFromTitle": "Sumber pesanan",
+      "platformPOS": "Pesanan dari POS",
+      "platformDSTORE": "Pesanan dari DSTORE",
+      "platformH5": "Pesan dengan scan QR",
+      "platformGRABFOOD": "Pesanan GrabFood",
+      "platformFOODPANDA": "Pesanan Foodpanda",
+      "productName": "Nama produk",
+      "method": "Cara / Metode",
+      "ingredient": "Bahan",
+      "remark": "Catatan",
+      "printTime": "Waktu cetak",
+      "exampleProductName": "Americano Dingin - Ukuran Besar",
+      "exampleMethod": "Manis 70%",
+      "exampleIngredient": "Mutiara x1",
+      "exampleRemark": "Saya adalah catatan"
+    },
     "zh-CN": {
-      "base": "基础信息",
-      "productInfo": "商品信息",
+      "customImg": "自定义图片",
       "footerGroup": "底栏",
+      "productInfo": "商品信息",
+      "customText": "自定义文本",
+      "tempProduct": "临时商品",
+      "base": "基础信息",
       "pickupNum": "取餐号",
       "serialNumTitle": "流水号/餐牌号",
       "serviceTypeTitle": "就餐方式",
       "serviceTypeDINEIN": "堂食",
+      "serviceTypeTAKEOUT": "外带",
+      "serviceTypeDELIVERY": "外卖",
+      "serviceTypePICKUP": "自提",
       "orderFromTitle": "订单来源",
-      "platformPOS": "POS订单",
+      "platformPOS": "POS Order",
+      "platformDSTORE": "DSTORE Order",
+      "platformH5": "Scan-to-order",
+      "platformGRABFOOD": "Grab food delivery orders",
+      "platformFOODPANDA": "Foodpanda food delivery orders",
       "productName": "商品名称",
+      "method": "做法",
+      "ingredient": "加料",
+      "remark": "备注",
       "printTime": "打印时间",
-      "exampleProductName": "冰美式-大杯"
+      "exampleProductName": "冰美式-大杯",
+      "exampleMethod": "7 分甜",
+      "exampleIngredient": "珍珠 x1",
+      "exampleRemark": "我是备注"
+    },
+    "en-US": {
+      "customImg": "Custom Image",
+      "footerGroup": "Footer",
+      "productInfo": "Order Info",
+      "customText": "Custom Text",
+      "tempProduct": "Temporary Product",
+      "base": "Basic Information",
+      "pickupNum": "Pickup Number",
+      "serialNumTitle": "Serial number/dish number",
+      "serviceTypeTitle": "Dining methods",
+      "serviceTypeDINEIN": "Dine-in",
+      "serviceTypeTAKEOUT": "Takeout",
+      "serviceTypeDELIVERY": "Delivery",
+      "serviceTypePICKUP": "Pickup",
+      "orderFromTitle": "Order Source",
+      "platformPOS": "POS Order",
+      "platformDSTORE": "DSTORE Order",
+      "platformH5": "Scan-to-order",
+      "platformGRABFOOD": "Grab food delivery orders",
+      "platformFOODPANDA": "Foodpanda food delivery orders",
+      "productName": "Product Name",
+      "method": "Method",
+      "ingredient": "Ingredient",
+      "remark": "Remark",
+      "printTime": "Print Time",
+      "exampleProductName": "Iced Americano - Large",
+      "exampleMethod": "70% Sweetness",
+      "exampleIngredient": "Pearls x1",
+      "exampleRemark": "I am a remark"
+    },
+    "th": {
+      "customImg": "รูปแบบกำหนดเอง",
+      "footerGroup": "ส่วนท้าย",
+      "productInfo": "ข้อมูลสินค้า",
+      "customText": "ข้อความกำหนดเอง",
+      "tempProduct": "สินค้าเพื่อชั่วคราว",
+      "base": "ข้อมูลพื้นฐาน",
+      "pickupNum": "หมายเลขรับสินค้า",
+      "serialNumTitle": "หมายเลขลำดับ/หมายเลขอาหาร",
+      "serviceTypeTitle": "วิธีการทาน",
+      "serviceTypeDINEIN": "ทานในร้าน",
+      "serviceTypeTAKEOUT": "เอาไปทาน",
+      "serviceTypeDELIVERY": "จัดส่งอาหาร",
+      "serviceTypePICKUP": "รับเอง",
+      "orderFromTitle": "แหล่งที่มาของคำสั่งซื้อ",
+      "platformPOS": "POS Order",
+      "platformDSTORE": "DSTORE Order",
+      "platformH5": "Scan-to-order",
+      "platformGRABFOOD": "Grab food delivery orders",
+      "platformFOODPANDA": "Foodpanda food delivery orders",
+      "productName": "ชื่อสินค้า",
+      "method": "วิธีทำ",
+      "ingredient": "เพิ่มส่วนผสม",
+      "remark": "หมายเหตุ",
+      "printTime": "เวลาพิมพ์",
+      "exampleProductName": "อเมริกาโน่เย็น - แก้วใหญ่",
+      "exampleMethod": "หวาน 70%",
+      "exampleIngredient": "ไข่มุก x1",
+      "exampleRemark": "ฉันคือหมายเหตุ"
+    },
+    "my": {
+      "customImg": "รูปแบบกำหนดเอง",
+      "footerGroup": "ส่วนท้าย",
+      "productInfo": "ข้อมูลสินค้า",
+      "customText": "ข้อความกำหนดเอง",
+      "tempProduct": "สินค้าเพื่อชั่วคราว",
+      "base": "ข้อมูลพื้นฐาน",
+      "serialNumTitle": "หมายเลขลำดับ/หมายเลขอาหาร",
+      "serviceTypeTitle": "วิธีการทาน",
+      "serviceTypeDINEIN": "ทานในร้าน",
+      "serviceTypeTAKEOUT": "เอาไปทาน",
+      "serviceTypeDELIVERY": "จัดส่งอาหาร",
+      "serviceTypePICKUP": "รับเอง",
+      "orderFromTitle": "แหล่งที่มาของคำสั่งซื้อ",
+      "platformPOS": "POS Order",
+      "platformDSTORE": "DSTORE Order",
+      "platformH5": "Scan-to-order",
+      "platformGRABFOOD": "Grab food delivery orders",
+      "platformFOODPANDA": "Foodpanda food delivery orders",
+      "productName": "ชื่อสินค้า",
+      "method": "วิธีทำ",
+      "ingredient": "เพิ่มส่วนผสม",
+      "remark": "หมายเหตุ",
+      "printTime": "เวลาพิมพ์",
+      "exampleProductName": "อเมริกาโน่เย็น - แก้วใหญ่",
+      "exampleMethod": "หวาน 70%",
+      "exampleIngredient": "ไข่มุก x1",
+      "exampleRemark": "ฉันคือหมายเหตุ"
     }
-  }
+  },
+  "bizKey": "makingLabel",
+  "isDefault": true,
+  "types": [
+    {
+      "typeId": "printTime",
+      "name": "{{printTime|l}}",
+      "groupId": "footer",
+      "templateId": "printTime"
+    },
+    {
+      "typeId": "customText",
+      "name": "{{customText|l}}",
+      "groupId": "footer",
+      "templateId": "text",
+      "isBottom": true
+    },
+    {
+      "typeId": "pickupNum",
+      "name": "{{pickupNum|l}}",
+      "groupId": "base",
+      "templateId": "header"
+    },
+    {
+      "typeId": "serialNum",
+      "name": "{{serialNumTitle|l}}",
+      "groupId": "base",
+      "templateId": "serialNum"
+    },
+    {
+      "typeId": "serviceType",
+      "name": "{{serviceTypeTitle|l}}",
+      "groupId": "base",
+      "templateId": "header"
+    },
+    {
+      "typeId": "orderFrom",
+      "name": "{{orderFromTitle|l}}",
+      "groupId": "base",
+      "templateId": "orderFrom"
+    },
+    {
+      "typeId": "productName",
+      "name": "{{productName|l}}",
+      "groupId": "productInfo",
+      "templateId": "productInfo"
+    },
+    {
+      "typeId": "method",
+      "name": "{{method|l}}",
+      "groupId": "productInfo",
+      "templateId": "productInfo"
+    },
+    {
+      "typeId": "ingredient",
+      "name": "{{ingredient|l}}",
+      "groupId": "productInfo",
+      "templateId": "productInfo"
+    },
+    {
+      "typeId": "remark",
+      "name": "{{remark|l}}",
+      "groupId": "productInfo",
+      "templateId": "productInfo"
+    },
+    {
+      "typeId": "logo",
+      "name": "{{customImg|l}}",
+      "groupId": "productInfo",
+      "templateId": "productInfo"
+    }
+  ],
+  "template": {
+    "text": {
+      "type": "text",
+      "param": {
+        "size": "s",
+        "align": 0,
+        "bold": 0,
+        "text": "text"
+      },
+      "edit": true
+    },
+    "divider": {
+      "type": "divider",
+      "param": {
+        "style": 2,
+        "height": 3
+      },
+      "upline": 1,
+      "bottomBlank": 1
+    },
+    "image": {
+      "type": "image",
+      "param": {
+        "data": "",
+        "align": 0,
+        "maxWidth": 15
+      }
+    },
+    "header": {
+      "type": "columnInColumn",
+      "param": {
+        "columns": [
+          {
+            "type": "text",
+            "typeId": "pickupNum",
+            "name": "{{pickupNum|l}}",
+            "param": {
+              "size": "xl",
+              "text": "{{pickupNum}}",
+              "align": 0,
+              "bold": 0,
+              "weight": 1
+            },
+            "edit": false,
+            "id": "uSCv1"
+          },
+          {
+            "id": "jBdcO",
+            "type": "text",
+            "typeId": "serviceType",
+            "name": "{{serviceTypeTitle|l}}",
+            "param": {
+              "size": "m",
+              "text": "{{serviceType}} {{num}}/{{total}}",
+              "bold": 0,
+              "align": 2,
+              "weight": 1
+            }
+          }
+        ]
+      }
+    },
+    "orderFrom": {
+      "type": "text",
+      "param": {
+        "size": "s",
+        "text": "{{orderFromTitle|l}}: {{orderFrom}}",
+        "align": 0,
+        "bold": 0
+      },
+      "edit": false
+    },
+    "productInfo": {
+      "type": "columnInColumn",
+      "param": {
+        "columns": [
+          {
+            "type": "row",
+            "param": {
+              "rows": [
+                {
+                  "type": "text",
+                  "typeId": "productName",
+                  "name": "{{productName|l}}",
+                  "param": {
+                    "size": "m",
+                    "text": "{{productName}}",
+                    "bold": 1,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "WfGUT"
+                },
+                {
+                  "type": "text",
+                  "typeId": "method",
+                  "name": "{{method|l}}",
+                  "hideFields": [
+                    "method"
+                  ],
+                  "param": {
+                    "size": "s",
+                    "text": "{{method}}",
+                    "bold": 0,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "vpTux"
+                },
+                {
+                  "type": "text",
+                  "typeId": "ingredient",
+                  "name": "{{ingredient|l}}",
+                  "hideFields": [
+                    "ingredient"
+                  ],
+                  "param": {
+                    "size": "s",
+                    "text": "{{ingredient}}",
+                    "bold": 0,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "vpTul"
+                },
+                {
+                  "type": "text",
+                  "typeId": "remark",
+                  "name": "{{remark|l}}",
+                  "hideFields": [
+                    "remarkContent"
+                  ],
+                  "param": {
+                    "size": "s",
+                    "text": "{{remark|l}}: {{remarkContent}}",
+                    "bold": 0,
+                    "align": 0,
+                    "weight": 1
+                  },
+                  "id": "skHuQ"
+                }
+              ],
+              "weight": 3,
+              "align": 0
+            },
+            "id": "kvOjv"
+          },
+          {
+            "type": "image",
+            "typeId": "logo",
+            "name": "{{customImg|l}}",
+            "param": {
+              "data": "",
+              "align": 2,
+              "weight": 1
+            },
+            "id": "Sv3Mq"
+          }
+        ]
+      }
+    },
+    "printTime": {
+      "type": "text",
+      "param": {
+        "size": "s",
+        "text": "{{time}}",
+        "align": 0,
+        "bold": 0
+      },
+      "edit": false
+    },
+    "serialNum": {
+      "type": "text",
+      "param": {
+        "text": "{{serialNumTitle|l}}: {{serialId}}",
+        "size": "m",
+        "bold": 0,
+        "align": 0
+      },
+      "edit": false
+    }
+  },
+  "sysPrintId": "S202601301608549237865170",
+  "extra": {
+    "addition": []
+  },
+  "supported": [
+    [
+      60,
+      40
+    ],
+    [
+      60,
+      30
+    ],
+    [
+      40,
+      30
+    ]
+  ]
 }
