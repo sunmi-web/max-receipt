@@ -13,7 +13,7 @@
 - **Node.js**（建议 v18+）
 - **adb**（Android Debug Bridge），并已配置到 PATH
 - **一台 V 系列设备**
-  - 已安装 Receipt Tester 应用（安装包见 `./assets/receipt_tester_DEBUG_b20250904164701.apk`）
+  - 已安装 Receipt Tester 应用（安装包[下载](./assets/receipt_tester_DEBUG_b20250904164701.apk)）
 
 ## 安装
 
