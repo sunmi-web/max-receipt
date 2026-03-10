@@ -1,0 +1,30 @@
+{
+  "name": "max-receipt",
+  "version": "1.0.0",
+  "description": "A",
+  "homepage": "https://github.com/sunmi-web/max-receipt#readme",
+  "bugs": {
+    "url": "https://github.com/sunmi-web/max-receipt/issues"
+  },
+  "repository": "git+https://github.com/sunmi-web/max-receipt.git",
+  "author": "永杰 <gyj1206@icloud.com>",
+  "type": "module",
+  "main": "jest.config.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.3.0",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@sunmi/max-print": "^1.0.0"
+  },
+  "license": "MIT"
+}

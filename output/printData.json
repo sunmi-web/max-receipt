@@ -1,0 +1,75 @@
+[
+  {
+    "type": "columns",
+    "params": {
+      "items": [
+        {
+          "type": "text",
+          "value": "223",
+          "size": 24,
+          "align": 0,
+          "bold": true,
+          "weight": 1
+        },
+        {
+          "type": "text",
+          "value": "堂食 1/5",
+          "size": 24,
+          "bold": false,
+          "align": 2,
+          "weight": 1
+        }
+      ]
+    }
+  },
+  {
+    "type": "text",
+    "params": {
+      "value": "流水号/餐牌号: 0001",
+      "size": 24,
+      "bold": false,
+      "align": 0
+    }
+  },
+  {
+    "type": "text",
+    "params": {
+      "value": "订单来源: POS订单",
+      "size": 20,
+      "align": 0,
+      "bold": false
+    }
+  },
+  {
+    "type": "dividing",
+    "params": {
+      "value": "dot",
+      "marginTop": 1,
+      "marginBottom": 1
+    }
+  },
+  {
+    "type": "text",
+    "params": {
+      "value": "冰美式-大杯",
+      "size": 24,
+      "bold": true,
+      "align": 0
+    }
+  },
+  {
+    "type": "text",
+    "params": {
+      "value": "2025/07/28 17:00:00",
+      "size": 20,
+      "align": 0,
+      "bold": false
+    }
+  },
+  {
+    "type": "cutPaper",
+    "params": {
+      "mode": 1
+    }
+  }
+]
